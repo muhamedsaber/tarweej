@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej/config/connectivity/connectivity_controller.dart';
-import 'package:tarweej/core/utils/app_assets.dart';
+import 'package:tarweej/no_internet_material_app.dart';
 
 class TarweejApp extends StatelessWidget {
   const TarweejApp({super.key});
@@ -29,32 +28,3 @@ class TarweejApp extends StatelessWidget {
 
 
 
-/// This MaterialApp will show only 
-/// if the [Internet] is Not Available no more
-class NoInternetMaterialApp extends StatelessWidget {
-  const NoInternetMaterialApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Scaffold(
-            body: Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                height: 130.h,
-                width: 130.w,
-                child: Image.asset(AppAssets.noInternet),
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
