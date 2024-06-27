@@ -1,0 +1,5 @@
+
+class LightThemeColors {
+   LightThemeColors._();
+   
+}
