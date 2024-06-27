@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "317051307442",
+    "project_id": "snap-shop-31f8d",
+    "storage_bucket": "snap-shop-31f8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317051307442:android:941217a8d983b57f8c10ab",
+        "android_client_info": {
+          "package_name": "com.example.snap_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFowyfU9wxXe7eBT76NKh0270PYMEcWWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317051307442:android:a0a59c3acc21dd878c10ab",
+        "android_client_info": {
+          "package_name": "com.example.tarweej"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFowyfU9wxXe7eBT76NKh0270PYMEcWWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
