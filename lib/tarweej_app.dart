@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej/config/connectivity/connectivity_controller.dart';
+import 'package:tarweej/config/theme/theme_manager/light_theme_manager.dart';
 import 'package:tarweej/no_internet_material_app.dart';
 
 class TarweejApp extends StatelessWidget {
@@ -9,10 +10,11 @@ class TarweejApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: ConnectivityController.instance.isConnected,
-      builder: (context, value, child) {
+      builder: (_, value, __) {
         if (value) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
+            theme: DarkThemeManager().darkTheme,
             home: Scaffold(
               appBar: AppBar(),
               body: const Text(
