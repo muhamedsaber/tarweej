@@ -1,0 +1,22 @@
+flutter_native_splash:
+
+  color: "#F1EFE7"
+  image: "assets/images/tarweej_splash_logo_ios_android_11.png"
+  android: true
+  ios: true
+  android_gravity: "center"
+  branding: "assets/images/branding_mark.png"
+  branding_dark: "assets/images/branding_mark.png"
+  color_dark: "#141111"
+  image_dark: "assets/images/tarweej_splash_logo_ios_android_11.png"
+  
+
+  android_12:
+    color: "#F1EFE7"
+    image: "assets/images/tarweej_splash_logo_ios_android_11.png"
+    android_gravity: "center"
+    branding: "assets/images/branding_mark.png"
+    branding_dark: "assets/images/branding_mark.png"
+    color_dark: "#141111"
+    image_dark: "assets/images/tarweej_splash_logo_ios_android_11.png"
+  
