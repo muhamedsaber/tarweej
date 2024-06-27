@@ -13,7 +13,7 @@ class ConnectivityController {
 
   /// listen to Connectiviy Changes and keeps trigger [isInternetAvailable]
   /// to update [isConnected] notifier
-  init() async {
+ Future<void> init() async {
     await Connectivity().checkConnectivity();
     Connectivity().onConnectivityChanged.listen((event) {
       isInternetAvailable(event);
