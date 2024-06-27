@@ -15,7 +15,14 @@ class TarweejApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             home: Scaffold(
               appBar: AppBar(),
-              body: const Text("There is internet"),
+              body: const Text(
+                "كريسستوفر نولان",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "LamaSans"),
+              ),
             ),
           );
         } else {
@@ -25,6 +32,3 @@ class TarweejApp extends StatelessWidget {
     );
   }
 }
-
-
-
