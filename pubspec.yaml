@@ -50,7 +50,7 @@ dependencies:
   json_serializable: ^6.8.0
   json_annotation: ^4.9.0
   connectivity_plus: ^6.0.3
-
+ 
   # Build Runner 
   build_runner: ^2.4.11
 
@@ -63,7 +63,7 @@ dependencies:
   # Firebase Packages
   firebase_core: ^3.1.1
   firebase_auth: ^5.1.1
-
+  google_sign_in: ^6.2.1
 
 
   # Local Storage And Cache

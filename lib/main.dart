@@ -13,6 +13,5 @@ void main() async {
   );
   await ConnectivityController.instance.init();
   await setupDependencyInjection();
-
   runApp(const TarweejApp());
 }
