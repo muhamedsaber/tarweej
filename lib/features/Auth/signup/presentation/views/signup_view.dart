@@ -16,6 +16,7 @@ class SignupView extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(

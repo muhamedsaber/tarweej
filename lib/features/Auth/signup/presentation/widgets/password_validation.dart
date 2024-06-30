@@ -23,10 +23,17 @@ class _PasswordValidationState extends State<PasswordValidation> {
   bool isLength = false;
   @override
   void initState() {
+    // Rather Than Using Constructor injection, use context.read to
+    // access The current passwordController of the SignupCubit
     passwordController = context.read<SignupCubit>().passwordController;
+
+    // Add a listener to the password controller to update the validation
     passwordController.addListener(updateValidation);
     super.initState();
   }
+
+  // Keeps Updating the validation of the password by The AppRegex class
+  // if The Password is in valid format or not it will change The state of the validation
 
   updateValidation() {
     setState(() {
@@ -39,6 +46,7 @@ class _PasswordValidationState extends State<PasswordValidation> {
     });
   }
 
+  // Dispose the password controller
   @override
   void dispose() {
     passwordController.removeListener(updateValidation);
@@ -61,6 +69,8 @@ class _PasswordValidationState extends State<PasswordValidation> {
     );
   }
 
+  // Builds a validation row with an icon and text. If validation is correct,
+  // text is struck through and icon is green; otherwise, icon is red.
   _buildValidationRow(String text, bool isValid) {
     return Row(
       children: [
@@ -75,6 +85,10 @@ class _PasswordValidationState extends State<PasswordValidation> {
                 isValid ? TextDecoration.lineThrough : TextDecoration.none,
             decorationStyle: TextDecorationStyle.solid,
             color: isValid ? Colors.grey : Colors.grey,
+
+            /// After Facing an Issue with the font family, I couldn'g refactor This
+            /// Stytle on [AppTextStyles] because making changes on The TextStyles
+            /// by using .copyWith() method will be rediculous 😂
             fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
           ),
         )

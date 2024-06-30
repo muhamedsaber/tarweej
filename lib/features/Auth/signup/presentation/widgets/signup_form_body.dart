@@ -20,25 +20,24 @@ class _SignupFormBodyState extends State<SignupFormBody> {
   @override
   void initState() {
     passwordController = context.read<SignupCubit>().passwordController;
-    passwordController.addListener(showPasswordValidation);
+    passwordController.addListener(changePasswordValidationVisibility);
     super.initState();
   }
 
-  /// This function is called when the password field Get Changed
-  /// It will show the password validation
-  showPasswordValidation() {
+  /// Invoked with any input in the password field,
+  /// displaying password validation Guide, its Purpose is to
+  /// Hide The Password Validation Guide if the password field is empty only
+  changePasswordValidationVisibility() {
     if (passwordController.text.isNotEmpty) {
       context.read<SignupCubit>().emitPasswordValidationVisiblity(true);
-    } else if (passwordController.text.isEmpty) {
-      context.read<SignupCubit>().emitPasswordValidationVisiblity(false);
-    } else if (AppRegex.isPasswordValid(passwordController.text)) {
+    } else {
       context.read<SignupCubit>().emitPasswordValidationVisiblity(false);
     }
   }
 
   @override
   void dispose() {
-    passwordController.removeListener(showPasswordValidation);
+    passwordController.removeListener(changePasswordValidationVisibility);
     super.dispose();
   }
 
@@ -51,17 +50,7 @@ class _SignupFormBodyState extends State<SignupFormBody> {
           hintText: S.of(context).email,
           controller: context.read<SignupCubit>().emailController,
           isObscureText: false,
-          validator: (value) {
-            /// Validate the email
-            if (value.isNullOrEmpty()) {
-              return S.of(context).pleaseEnterEmail;
-            } else if (!AppRegex.isEmailValid(
-                context.read<SignupCubit>().emailController.text)) {
-              return S.of(context).pleaseEnterValidEmail;
-            } else {
-              return null;
-            }
-          },
+          validator: _validateEmail
         ),
         verticalSpace(20),
 
@@ -80,21 +69,32 @@ class _SignupFormBodyState extends State<SignupFormBody> {
               isObscureText ? Icons.visibility_off : Icons.visibility,
             ),
           ),
-          validator: (value) {
-            // Validate the password
-            if (value.isNullOrEmpty()) {
-              return S.of(context).pleaseEnterPassword;
-            } else if (!AppRegex.isPasswordValid(
-                context.read<SignupCubit>().passwordController.text)) {
-              return S.of(context).pleaseEnterValidPassword;
-            } else {
-              return null;
-            }
-          },
+          validator: _validatePassword
         ),
         verticalSpace(20),
         const PasswordValidationBlocBuilder(),
       ],
     );
+  }
+  
+
+  /// Validates the email field
+  String? _validateEmail(String? value) {
+    if (value.isNullOrEmpty()) {
+      return S.of(context).pleaseEnterEmail;
+    } else if (!AppRegex.isEmailValid(value!)) {
+      return S.of(context).pleaseEnterValidEmail;
+    }
+    return null;
+  }
+  
+  /// Validates the password field
+  String? _validatePassword(String? value) {
+    if (value.isNullOrEmpty()) {
+      return S.of(context).pleaseEnterPassword;
+    } else if (!AppRegex.isPasswordValid(value!)) {
+      return S.of(context).pleaseEnterValidPassword;
+    }
+    return null;
   }
 }

@@ -19,20 +19,18 @@ class _SignupFormState extends State<SignupForm> {
   Widget build(BuildContext context) {
     return Form(
       key: context.read<SignupCubit>().formKey,
-      child: Expanded(
-        child: ListView(
-          children: [
-            const SignupFormBody(),
-            verticalSpace(20),
-            AppTextButton(
-              buttonText: S.of(context).createAccount,
-              onPressed: () {
-                signup();
-              },
-            ),
-            verticalSpace(20),
-          ],
-        ),
+      child: Column(
+        children: [
+          const SignupFormBody(),
+          verticalSpace(20),
+          AppTextButton(
+            buttonText: S.of(context).createAccount,
+            onPressed: () {
+              signup();
+            },
+          ),
+          verticalSpace(20),
+        ],
       ),
     );
   }
