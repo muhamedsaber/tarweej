@@ -22,6 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "hello": MessageLookupByLibrary.simpleMessage("hello")
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "hello": MessageLookupByLibrary.simpleMessage("hello"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "pleaseEnterEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter email"),
+        "pleaseEnterPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter password"),
+        "pleaseEnterValidEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter valid email"),
+        "pleaseEnterValidPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter valid password"),
+        "validatePasswordLenght": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters long"),
+        "validatePasswordLowercase": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one lowercase letter"),
+        "validatePasswordNumber": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one number"),
+        "validatePasswordSpecialCharacter":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least one special character"),
+        "validatePasswordUppercase": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one uppercase letter")
       };
 }

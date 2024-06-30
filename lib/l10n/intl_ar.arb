@@ -1,3 +1,16 @@
 {
-    "hello":"مرحبا"
+    "hello":"مرحبا",
+    "email":"البريد الإلكتروني",
+    "password":"كلمة السر",
+    "pleaseEnterEmail":"من فضلك ادخل البريد الإلكتروني",
+    "pleaseEnterPassword":"من فضلك ادخل كلمة السر",
+    "pleaseEnterValidEmail":"من فضلك ادخل بريد إلكتروني صحيح",
+    "pleaseEnterValidPassword":"من فضلك ادخل كلمة سر صحيحة",
+    "validatePasswordLenght":"كلمة السر يجب أن تكون 8 أحرف على الأقل",
+    "validatePasswordUppercase":"كلمة السر يجب أن تحتوي على حرف كبير واحد على الأقل",
+    "validatePasswordLowercase":"كلمة السر يجب أن تحتوي على حرف صغير واحد على الأقل",
+    "validatePasswordNumber":"كلمة السر يجب أن تحتوي على رقم واحد على الأقل",
+    "validatePasswordSpecialCharacter":"كلمة السر يجب أن تحتوي على حرف خاص واحد على الأقل",
+    "createAccount":"إنشاء حساب"
+
 }

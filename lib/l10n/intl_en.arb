@@ -1,5 +1,17 @@
 
 {
-    "hello":"hello"
+    "hello":"hello",
+    "email":"Email",
+    "password":"Password",
+    "pleaseEnterEmail":"Please enter email",
+    "pleaseEnterPassword":"Please enter password",
+    "pleaseEnterValidEmail":"Please enter valid email",
+    "pleaseEnterValidPassword":"Please enter valid password",
+    "validatePasswordLenght":"Password must be at least 8 characters long",
+    "validatePasswordUppercase":"Password must contain at least one uppercase letter",
+    "validatePasswordLowercase":"Password must contain at least one lowercase letter",
+    "validatePasswordNumber":"Password must contain at least one number",
+    "validatePasswordSpecialCharacter":"Password must contain at least one special character",
+    "createAccount":"Create Account"
 }
 
