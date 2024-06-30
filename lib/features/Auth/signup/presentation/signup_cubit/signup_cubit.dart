@@ -41,15 +41,12 @@ class SignupCubit extends Cubit<SignupState> {
       emit(const SignupState.passwordValidationInvisible());
     }
   }
-  
-
-
 
   /// save User [Uid] in cache using SecureStorage
   saveUserUid(UserCredential credential) async {
     await CacheHelper.saveUserUid(credential.user?.uid ?? "");
   }
-  
+
   /// save User Data in cache using Shared Preferences
   saveUserData(UserCredential credential) async {
     final user = credential.user;

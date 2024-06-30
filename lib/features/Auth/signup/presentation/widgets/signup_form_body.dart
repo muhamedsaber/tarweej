@@ -60,14 +60,8 @@ class _SignupFormBodyState extends State<SignupFormBody> {
           isObscureText: isObscureText,
           controller: context.read<SignupCubit>().passwordController,
           suffixIcon: IconButton(
-            onPressed: () {
-              setState(() {
-                isObscureText = !isObscureText;
-              });
-            },
-            icon: Icon(
-              isObscureText ? Icons.visibility_off : Icons.visibility,
-            ),
+            onPressed: _changePasswordVisibility,
+            icon: _changePasswordIconVisibility()
           ),
           validator: _validatePassword
         ),
@@ -76,7 +70,19 @@ class _SignupFormBodyState extends State<SignupFormBody> {
       ],
     );
   }
-  
+    
+
+    /// Change Password Icon Visibility
+  Icon _changePasswordIconVisibility() {
+    return Icon(
+      isObscureText ? Icons.visibility_off : Icons.visibility,
+    );}
+
+   /// Cahnge Password Visibility
+  void _changePasswordVisibility() {
+    setState(() {
+      isObscureText = !isObscureText;
+    });}
 
   /// Validates the email field
   String? _validateEmail(String? value) {
