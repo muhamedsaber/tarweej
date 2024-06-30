@@ -60,11 +60,11 @@ dependencies:
   # State Management
   flutter_bloc: ^8.1.6
 
-  # Firebase Packages
+  # Firebase Packages And Social Login
   firebase_core: ^3.1.1
   firebase_auth: ^5.1.1
   google_sign_in: ^6.2.1
-
+  flutter_facebook_auth: ^7.0.1
 
   # Local Storage And Cache
   hive_flutter: ^1.1.0

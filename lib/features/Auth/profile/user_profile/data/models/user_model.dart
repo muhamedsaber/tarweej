@@ -14,7 +14,7 @@ class UserModel {
   final String? userGender;
   final String? userBirthDate;
   final String? userCountry;
-
+  final String? accountCreationTime;
   UserModel({
     this.email,
     this.name,
@@ -27,6 +27,7 @@ class UserModel {
     this.userGender,
     this.userBirthDate,
     this.userCountry,
+    this.accountCreationTime
   });
  
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);

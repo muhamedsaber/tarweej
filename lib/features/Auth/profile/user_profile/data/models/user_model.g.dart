@@ -18,6 +18,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
       userGender: json['userGender'] as String?,
       userBirthDate: json['userBirthDate'] as String?,
       userCountry: json['userCountry'] as String?,
+      accountCreationTime: json['accountCreationTime'] as String?,
     );
 
 Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
@@ -32,4 +33,5 @@ Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
       'userGender': instance.userGender,
       'userBirthDate': instance.userBirthDate,
       'userCountry': instance.userCountry,
+      'accountCreationTime': instance.accountCreationTime,
     };

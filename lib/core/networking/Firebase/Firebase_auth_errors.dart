@@ -107,7 +107,12 @@ enum FirebaseAuthErrorsCodesEnum {
   invalidRecaptchaVersion,
   invalidReqType,
   unknownError
-}
+} 
+
+/// To be compeletes
+ class FirebaseErrors {
+   static const String accountExistsWithDifferentCredential= "account-exists-with-different-credential";
+ }
 
 class FirebaseAuthErrorMessages {
   static const String adminRestrictedOperation =

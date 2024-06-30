@@ -1,0 +1,6 @@
+<resources>
+    <string name="facebook_app_id">2110444745978938</string>
+     <string name="app_name">TarweejApp</string>
+    <string name="fb_login_protocol_scheme">fb9d7d2c66558e5eb144145c3fe02c3d49</string>
+    <string name="facebook_client_token">62c8997f2f5696d41c07503f806d138f</string>
+</resources>

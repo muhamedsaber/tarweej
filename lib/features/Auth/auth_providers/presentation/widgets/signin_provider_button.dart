@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 
-class SigninProviderButton extends StatelessWidget {
-  const SigninProviderButton({super.key, required this.imege, this.onTap});
+class SignInProviderButton extends StatelessWidget {
+  const SignInProviderButton({super.key, required this.imege, this.onTap});
   final String imege;
   final Function()? onTap;
   @override
