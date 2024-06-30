@@ -80,15 +80,16 @@ class _PasswordValidationState extends State<PasswordValidation> {
         ),
         Text(
           text,
+
+          /// After Facing an Issue with the font family, I couldn'g refactor This
+          /// Style on [AppTextStyles] because making changes on The TextStyles
+          /// by using .copyWith() method will be rediculous 😂
+          /// So I decided to keep it here, Its bad practice but I'll chabnge it in The future
           style: TextStyle(
             decoration:
                 isValid ? TextDecoration.lineThrough : TextDecoration.none,
             decorationStyle: TextDecorationStyle.solid,
             color: isValid ? Colors.grey : Colors.grey,
-
-            /// After Facing an Issue with the font family, I couldn'g refactor This
-            /// Stytle on [AppTextStyles] because making changes on The TextStyles
-            /// by using .copyWith() method will be rediculous 😂
             fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
           ),
         )

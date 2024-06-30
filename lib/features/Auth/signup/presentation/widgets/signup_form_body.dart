@@ -29,9 +29,9 @@ class _SignupFormBodyState extends State<SignupFormBody> {
   /// Hide The Password Validation Guide if the password field is empty only
   changePasswordValidationVisibility() {
     if (passwordController.text.isNotEmpty) {
-      context.read<SignupCubit>().emitPasswordValidationVisiblity(true);
+      context.read<SignupCubit>().changePasswordValidationVisibility(true);
     } else {
-      context.read<SignupCubit>().emitPasswordValidationVisiblity(false);
+      context.read<SignupCubit>().changePasswordValidationVisibility(false);
     }
   }
 

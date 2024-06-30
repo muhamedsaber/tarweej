@@ -21,6 +21,9 @@ class SignupCubit extends Cubit<SignupState> {
         .signup(SignupRequestBody(email: body.email, password: body.password));
     result.when(
       success: (data) {
+        final user = data as UserCredential;
+        saveUserUid(user);
+        saveUserData(user);
         emit(const SignupState.success());
       },
       error: (e) {
@@ -31,12 +34,27 @@ class SignupCubit extends Cubit<SignupState> {
 
   /// when user click on the password textfield
   /// The password validation will be visible
-  emitPasswordValidationVisiblity(bool isVisible) {
+  changePasswordValidationVisibility(bool isVisible) {
     if (isVisible) {
       emit(const SignupState.passwordValidationVisible());
     } else {
       emit(const SignupState.passwordValidationInvisible());
     }
   }
+  
 
+
+
+  /// save User [Uid] in cache using SecureStorage
+  saveUserUid(UserCredential credential) async {
+    await CacheHelper.saveUserUid(credential.user?.uid ?? "");
+  }
+  
+  /// save User Data in cache using Shared Preferences
+  saveUserData(UserCredential credential) async {
+    final user = credential.user;
+    await UserCahceHelper.saveUser(UserModel(
+      email: user?.email ?? "",
+    ));
+  }
 }
