@@ -12,6 +12,10 @@
     "validatePasswordLowercase":"Password must contain at least one lowercase letter",
     "validatePasswordNumber":"Password must contain at least one number",
     "validatePasswordSpecialCharacter":"Password must contain at least one special character",
-    "createAccount":"Create Account"
+    "createAccount":"Create Account",
+    "signupSuccess":"Signup Success",
+    "errorOccured":"Error Occured",
+    "ok":"Ok"
+
 }
 

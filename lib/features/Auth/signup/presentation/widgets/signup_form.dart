@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/core/common/widgets/app_text_button.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
+import 'package:tarweej/features/Auth/signup/presentation/widgets/signup_bloc_consumer.dart';
 import 'package:tarweej/features/Auth/signup/presentation/widgets/signup_form_body.dart';
 import 'package:tarweej/generated/l10n.dart';
 
@@ -23,13 +24,14 @@ class _SignupFormState extends State<SignupForm> {
         children: [
           const SignupFormBody(),
           verticalSpace(20),
-          AppTextButton(
-            buttonText: S.of(context).createAccount,
-            onPressed: () {
-              signup();
-            },
-          ),
-          verticalSpace(20),
+          SignupBlocConsumer(
+            signupButton: AppTextButton(
+              buttonText: S.of(context).createAccount,
+              onPressed: () {
+                signup();
+              },
+            ),
+          )
         ],
       ),
     );
@@ -37,7 +39,7 @@ class _SignupFormState extends State<SignupForm> {
 
   signup() {
     if (context.read<SignupCubit>().formKey.currentState!.validate()) {
-      log("do something here");
+      context.read<SignupCubit>().signup();
     }
   }
 }

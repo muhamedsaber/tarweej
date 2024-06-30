@@ -24,7 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "errorOccured": MessageLookupByLibrary.simpleMessage("حدث خطأ"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
+        "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "pleaseEnterEmail": MessageLookupByLibrary.simpleMessage(
             "من فضلك ادخل البريد الإلكتروني"),
@@ -34,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "من فضلك ادخل بريد إلكتروني صحيح"),
         "pleaseEnterValidPassword":
             MessageLookupByLibrary.simpleMessage("من فضلك ادخل كلمة سر صحيحة"),
+        "signupSuccess":
+            MessageLookupByLibrary.simpleMessage("تم التسجيل بنجاح"),
         "validatePasswordLenght": MessageLookupByLibrary.simpleMessage(
             "كلمة السر يجب أن تكون 8 أحرف على الأقل"),
         "validatePasswordLowercase": MessageLookupByLibrary.simpleMessage(

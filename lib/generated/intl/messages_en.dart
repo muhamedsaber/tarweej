@@ -24,7 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "errorOccured": MessageLookupByLibrary.simpleMessage("Error Occured"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pleaseEnterEmail":
             MessageLookupByLibrary.simpleMessage("Please enter email"),
@@ -34,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter valid email"),
         "pleaseEnterValidPassword":
             MessageLookupByLibrary.simpleMessage("Please enter valid password"),
+        "signupSuccess": MessageLookupByLibrary.simpleMessage("Signup Success"),
         "validatePasswordLenght": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters long"),
         "validatePasswordLowercase": MessageLookupByLibrary.simpleMessage(

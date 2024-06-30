@@ -15,10 +15,10 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
 
-  signup({required SignupRequestBody body}) async {
+  signup() async {
     emit(const SignupState.loading());
-    final result = await repo
-        .signup(SignupRequestBody(email: body.email, password: body.password));
+    final result = await repo.signup(SignupRequestBody(
+        email: emailController.text, password: passwordController.text));
     result.when(
       success: (data) {
         final user = data as UserCredential;
@@ -32,8 +32,9 @@ class SignupCubit extends Cubit<SignupState> {
     );
   }
 
-  /// when user click on the password textfield
-  /// The password validation will be visible
+  /// when user start to type in the password textfield
+  /// The password validation will be visible if the password field is not empty
+  /// otherwise it will be hidden
   changePasswordValidationVisibility(bool isVisible) {
     if (isVisible) {
       emit(const SignupState.passwordValidationVisible());
@@ -42,7 +43,7 @@ class SignupCubit extends Cubit<SignupState> {
     }
   }
 
-  /// save User [Uid] in cache using SecureStorage
+  /// save User [Uid] in cache using FlutterSecureStorage
   saveUserUid(UserCredential credential) async {
     await CacheHelper.saveUserUid(credential.user?.uid ?? "");
   }

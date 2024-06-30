@@ -179,6 +179,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Signup Success`
+  String get signupSuccess {
+    return Intl.message(
+      'Signup Success',
+      name: 'signupSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error Occured`
+  String get errorOccured {
+    return Intl.message(
+      'Error Occured',
+      name: 'errorOccured',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
