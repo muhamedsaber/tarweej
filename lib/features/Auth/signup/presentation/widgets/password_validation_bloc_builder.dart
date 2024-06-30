@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_state.dart';
-import 'package:tarweej/features/Auth/signup/presentation/widgets/password_validation.dart';
+import 'package:tarweej/features/Auth/signup/presentation/widgets/password_validation_guid.dart';
 
 class PasswordValidationBlocBuilder extends StatelessWidget {
   const PasswordValidationBlocBuilder({super.key});
@@ -20,8 +20,9 @@ class PasswordValidationBlocBuilder extends StatelessWidget {
           duration: const Duration(milliseconds: 500),
           switchInCurve: Curves.easeIn,
           switchOutCurve: Curves.easeOut,
-          child:
-              isVisible ? const PasswordValidation() : const SizedBox.shrink(),
+          child: isVisible
+              ? const PasswordValidationGuid()
+              : const SizedBox.shrink(),
         );
       },
     );

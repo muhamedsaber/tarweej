@@ -24,9 +24,8 @@ class _SignupFormBodyState extends State<SignupFormBody> {
     super.initState();
   }
 
-  /// Invoked with any input in the password field,
-  /// displaying password validation Guide, its Purpose is to
-  /// Hide The Password Validation Guide if the password field is empty only
+  /// Invoked to Hide
+  /// The Password Validation Guide if the password field is empty 
   changePasswordValidationVisibility() {
     if (passwordController.text.isNotEmpty) {
       context.read<SignupCubit>().changePasswordValidationVisibility(true);

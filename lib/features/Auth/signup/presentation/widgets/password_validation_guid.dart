@@ -5,16 +5,16 @@ import 'package:tarweej/core/styles/text_style_helper.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
 import 'package:tarweej/generated/l10n.dart';
 
-class PasswordValidation extends StatefulWidget {
-  const PasswordValidation({
+class PasswordValidationGuid extends StatefulWidget {
+  const PasswordValidationGuid({
     super.key,
   });
 
   @override
-  State<PasswordValidation> createState() => _PasswordValidationState();
+  State<PasswordValidationGuid> createState() => _PasswordValidationGuidState();
 }
 
-class _PasswordValidationState extends State<PasswordValidation> {
+class _PasswordValidationGuidState extends State<PasswordValidationGuid> {
   late TextEditingController passwordController;
   bool isLowercase = false;
   bool isUppercase = false;
