@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tarweej/config/cache/cache_constants.dart';
 
 class CacheHelper {
   CacheHelper._();
@@ -62,5 +64,18 @@ class CacheHelper {
     debugPrint('SharedPrefHelper : getString with key : $key');
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     return sharedPreferences.getString(key) ?? '';
+  }
+
+  static saveUserUid(String uid) async {
+    debugPrint('uid saved successfully : saveUserUid with key : $uid');
+    await const FlutterSecureStorage()
+        .write(key: CacheConstants.userUid, value: uid);
+  }
+
+  static Future<String> getUserUid() async {
+    debugPrint('uid retieved successfully');
+    return await const FlutterSecureStorage()
+            .read(key: CacheConstants.userUid) ??
+        "";
   }
 }
