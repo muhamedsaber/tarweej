@@ -5,6 +5,7 @@ import 'package:tarweej/core/di/dependency_injection.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/core/utils/app_assets.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_providers.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
@@ -23,6 +24,9 @@ class SignupView extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => getIt<GoogleSignInCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<FacebookSigninCubit>(),
           ),
         ],
         child: Scaffold(

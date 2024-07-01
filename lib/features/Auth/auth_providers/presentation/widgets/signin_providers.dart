@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/core/utils/app_assets.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/logic/signin_with_facebook_service.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_provider_button.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_with_facebook_bloc_listener.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_with_google_bloc_listener.dart';
 
 class SigninProviders extends StatelessWidget {
@@ -23,7 +24,9 @@ class SigninProviders extends StatelessWidget {
         horizontalSpace(10),
         SignInProviderButton(
           imege: AppAssets.facebookLogo,
-          onTap: () => SigninWithFacebookService().signInWithFacebook(),
+          onTap: () {
+            _signInWithFacebook(context);
+          },
         ),
         horizontalSpace(10),
         const SignInProviderButton(
@@ -31,13 +34,19 @@ class SigninProviders extends StatelessWidget {
         ),
 
         /// Listeners
-        const SignInWithGoogleBlocListener()
+        const SignInWithGoogleBlocListener(),
+        const SigninWithFacebookBlocListener()
       ],
     );
   }
 
-  // This method is used to trigger signup with google
+  /// This method is used to trigger signin with [google]
   _signInWithGoogle(BuildContext context) {
     context.read<GoogleSignInCubit>().signIn();
+  }
+
+  /// This method is used to trigger signin with [facebook]
+  _signInWithFacebook(BuildContext context) {
+    context.read<FacebookSigninCubit>().signIn();
   }
 }
