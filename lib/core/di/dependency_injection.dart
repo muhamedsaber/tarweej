@@ -9,6 +9,8 @@ import 'package:tarweej/features/Auth/auth_providers/data/services/firebase_auth
 import 'package:tarweej/features/Auth/auth_providers/data/services/google_signin_service.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_cubit.dart';
+import 'package:tarweej/features/Auth/login/data/repos/login_repo.dart';
+import 'package:tarweej/features/Auth/login/presentation/logic/cubit/login_cubit.dart';
 import 'package:tarweej/features/Auth/signup/data/repos/signup_repo.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
 
@@ -34,9 +36,16 @@ setupDependencyInjection() async {
       googleSignInService: googleSignInService, firebaseAuthService: getIt()));
   getIt.registerSingleton<GoogleSignInCubit>(GoogleSignInCubit(repo: getIt()));
 
-
-
   /// Facebook Signin
-  getIt.registerSingleton<FacebookSigninRepo >(FacebookSigninRepo (facebookAuth:facebookAuth,firebaseAuthServiceInterface:getIt()));
-  getIt.registerSingleton<FacebookSigninCubit>(FacebookSigninCubit(repo:getIt()));
+  getIt.registerSingleton<FacebookSigninRepo>(FacebookSigninRepo(
+      facebookAuth: facebookAuth, firebaseAuthServiceInterface: getIt()));
+  getIt.registerSingleton<FacebookSigninCubit>(
+      FacebookSigninCubit(repo: getIt()));
+
+  /// Firebase Login
+  getIt.registerSingleton<LoginRepo>(LoginRepo(firebaseAuth: firebaseAuth));
+  // factory
+getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+
+
 }

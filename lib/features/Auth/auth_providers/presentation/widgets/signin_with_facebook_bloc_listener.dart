@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej/config/Alerts/app_toasts.dart';
-import 'package:tarweej/core/Alerts/app_dialogs.dart';
+import 'package:tarweej/config/router/routes.dart';
+import 'package:tarweej/config/Alerts/app_dialogs.dart';
 import 'package:tarweej/core/common/widgets/app_text_button.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
@@ -53,7 +54,7 @@ class SigninWithFacebookBlocListener extends StatelessWidget {
                       buttonHeight: 35.h,
                       buttonWidth: 140.w,
                       onPressed: () {
-                        Navigator.pop(context);
+                         context.navigateTo(Routes.loginView);
                       },
                     ),
                     TextButton(

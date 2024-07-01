@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/config/cache/cache_helper.dart';
 import 'package:tarweej/config/cache/user_cache_helper.dart';
-import 'package:tarweej/features/Auth/profile/user_profile/data/models/user_model.dart';
+import 'package:tarweej/core/Data/models/user_model.dart';
 import 'package:tarweej/features/Auth/signup/data/model/signup_request_body.dart';
 import 'package:tarweej/features/Auth/signup/data/repos/signup_repo.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_state.dart';
@@ -24,6 +24,7 @@ class SignupCubit extends Cubit<SignupState> {
         final user = data as UserCredential;
         saveUserUid(user);
         saveUserData(user);
+        _clearControllers();
         emit(const SignupState.success());
       },
       error: (e) {
@@ -54,5 +55,10 @@ class SignupCubit extends Cubit<SignupState> {
     await UserCahceHelper.saveUser(UserModel(
       email: user?.email ?? "",
     ));
+  }
+
+  _clearControllers() {
+    emailController.clear();
+    passwordController.clear();
   }
 }

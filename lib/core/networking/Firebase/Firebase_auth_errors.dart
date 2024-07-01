@@ -112,6 +112,7 @@ enum FirebaseAuthErrorsCodesEnum {
 /// To be compeletes
  class FirebaseErrors {
    static const String accountExistsWithDifferentCredential= "account-exists-with-different-credential";
+   static const String invalidCredential ="invalid-credential";
  }
 
 class FirebaseAuthErrorMessages {
@@ -160,7 +161,7 @@ class FirebaseAuthErrorMessages {
       "The dynamic link domain is invalid.";
   static const String invalidEmail = "The email address is invalid.";
   static const String invalidEmulatorScheme = "The emulator scheme is invalid.";
-  static const String invalidCredential = "The credential is invalid.";
+  static const String invalidCredential ="The provided credential is not valid. Please check and try again.";
   static const String invalidMessagePayload = "The message payload is invalid.";
   static const String invalidMultiFactorSession =
       "The multi-factor session is invalid.";

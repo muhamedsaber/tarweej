@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/core/common/widgets/app_text_button.dart';
+import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
 import 'package:tarweej/features/Auth/signup/presentation/widgets/signup_bloc_consumer.dart';
@@ -26,6 +27,7 @@ class _SignupFormState extends State<SignupForm> {
           SignupBlocConsumer(
             signupButton: AppTextButton(
               buttonText: S.of(context).createAccount,
+              splashColor: context.theme.scaffoldBackgroundColor.withOpacity(0.1),
               onPressed: () {
                 signup();
               },

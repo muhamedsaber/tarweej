@@ -13,19 +13,21 @@ class AppTextButton extends StatelessWidget {
   final String buttonText;
   final TextStyle? textStyle;
   final VoidCallback? onPressed;
-  
-  const AppTextButton({
-    super.key,
-    this.borderRadius,
-    this.backgroundColor,
-    this.horizontalPadding,
-    this.verticalPadding,
-    this.buttonHeight,
-    this.buttonWidth,
-    required this.buttonText,
-    this.textStyle,
-     this.onPressed,
-  });
+  final BorderSide? borderSide;
+  final Color? splashColor;
+  const AppTextButton(
+      {super.key,
+      this.borderRadius,
+      this.backgroundColor,
+      this.horizontalPadding,
+      this.verticalPadding,
+      this.buttonHeight,
+      this.buttonWidth,
+      required this.buttonText,
+      this.textStyle,
+      this.onPressed,
+      this.splashColor,
+      this.borderSide});
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,16 @@ class AppTextButton extends StatelessWidget {
       style: ButtonStyle(
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 13.r),
-          ),
+              borderRadius: BorderRadius.circular(borderRadius ?? 13.r),
+              side: borderSide ?? BorderSide.none),
         ),
         backgroundColor: WidgetStateProperty.all(
           backgroundColor ?? context.theme.primaryColor,
         ),
-        
+        //splash color
+        overlayColor: WidgetStateProperty.all(
+         splashColor
+        ),
         fixedSize: WidgetStateProperty.all(
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
         ),

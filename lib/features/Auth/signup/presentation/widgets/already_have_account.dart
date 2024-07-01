@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarweej/config/router/routes.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/core/styles/app_text_styles.dart';
@@ -18,7 +19,9 @@ class AlreadyHaveAccount extends StatelessWidget {
         ),
         horizontalSpace(5),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            context.navigateTo(Routes.loginView);
+          },
           child: Text(
             S.of(context).login,
             style: AppTextStyles.font16OnSurfaceMedium(context).copyWith(
