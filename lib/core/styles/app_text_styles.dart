@@ -4,8 +4,7 @@ import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/styles/text_style_helper.dart';
 
 class AppTextStyles {
-  static final String _currentLanguage =
-      TextStylesHelper().loadCurrentLanguageFromIntl();
+  
 
   /*
       Note: TarweejApp support multiple languages, so the font family is set based on the current language.
@@ -18,47 +17,42 @@ class AppTextStyles {
     I promice to improve this in the future.
     ----------
   */
-  
-  
-
-
 
   /// ------------------ Medium ------------------
-  
 
-
-    static TextStyle font10OnSurfaceMedium(BuildContext context) {
+  static TextStyle font10OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 12.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
-    );
-  } 
-
-   static TextStyle font12OnSurfaceMedium(BuildContext context) {
-    return TextStyle(
-      color: context.theme.colorScheme.onSurface,
-      fontSize: 12.sp,
-      fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
 
-   static TextStyle font14OnSurfaceMedium(BuildContext context) {
+  static TextStyle font12OnSurfaceMedium(BuildContext context) {
+    return TextStyle(
+      color: context.theme.colorScheme.onSurface,
+      fontSize: 12.sp,
+      fontWeight: TextStylesHelper.medium,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context)
+    );
+  }
+
+  static TextStyle font14OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 14.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
+
   static TextStyle font16OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 16.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
 
@@ -67,35 +61,46 @@ class AppTextStyles {
       color: context.theme.colorScheme.onSurface,
       fontSize: 18.sp,
       fontWeight: TextStylesHelper.medium,
-      decorationThickness:0,
-      fontFamily: _currentLanguage,
+      decorationThickness: 0,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
+
   static TextStyle font20OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 20.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
+
   static TextStyle font22OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 22.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
+
   static TextStyle font24OnSurfaceMedium(BuildContext context) {
     return TextStyle(
       color: context.theme.colorScheme.onSurface,
       fontSize: 22.sp,
       fontWeight: TextStylesHelper.medium,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
 
+  static TextStyle font30OnSurfaceMedium(BuildContext context) {
+    return TextStyle(
+      color: context.theme.colorScheme.onSurface,
+      fontSize: 30.sp,
+      fontWeight: TextStylesHelper.extraBold,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
+    );
+  }
 
   /// ------------------ Regular ------------------
   static TextStyle font16OnSurfaceRegular(BuildContext context) {
@@ -103,8 +108,35 @@ class AppTextStyles {
       color: context.theme.colorScheme.secondary,
       fontSize: 16.sp,
       fontWeight: TextStylesHelper.regular,
-      fontFamily: _currentLanguage,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
     );
   }
-  
+
+  static TextStyle font20OnSurfaceRegular(BuildContext context) {
+    return TextStyle(
+      color: context.theme.colorScheme.secondary,
+      fontSize: 20.sp,
+      fontWeight: TextStylesHelper.regular,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
+    );
+  }
+
+  ///------------------- ExtraBold -------------------
+  static TextStyle font30OnSurfaceExtraBold(BuildContext context) {
+    return TextStyle(
+      color: context.theme.colorScheme.onSurface,
+      fontSize: 30.sp,
+      fontWeight: TextStylesHelper.extraBold,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
+    );
+  }
+
+  static TextStyle font20OnSurfaceExtraBold(BuildContext context) {
+    return TextStyle(
+      color: context.theme.colorScheme.onSurface,
+      fontSize: 20.sp,
+      fontWeight: TextStylesHelper.extraBold,
+      fontFamily: TextStylesHelper().getCurrentLanguageByContext(context),
+    );
+  }
 }

@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `hello`
+  /// `Welcome`
   String get hello {
     return Intl.message(
-      'hello',
+      'Welcome',
       name: 'hello',
       desc: '',
       args: [],
@@ -205,6 +205,56 @@ class S {
     return Intl.message(
       'Ok',
       name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create `
+  String get create {
+    return Intl.message(
+      'Create ',
+      name: 'create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `your Account`
+  String get yourAccount {
+    return Intl.message(
+      'your Account',
+      name: 'yourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to continue`
+  String get toContinue {
+    return Intl.message(
+      'to continue',
+      name: 'toContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
       desc: '',
       args: [],
     );

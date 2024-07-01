@@ -1,5 +1,5 @@
 {
-    "hello":"مرحبا",
+    "hello":"مرحباً بك",
     "email":"البريد الإلكتروني",
     "password":"كلمة السر",
     "pleaseEnterEmail":"من فضلك ادخل البريد الإلكتروني",
@@ -14,8 +14,12 @@
     "createAccount":"إنشاء حساب",
     "signupSuccess":"تم التسجيل بنجاح",
     "errorOccured":"حدث خطأ",
-    "ok":"حسنا"
-
+    "ok":"حسنا",
+    "create":"أنشـــــئ ",
+    "yourAccount":"حسابك",
+    "toContinue":"للمتابعة",
+    "alreadyHaveAccount":"لديك حساب بالفعل؟",
+    "login":"تسجيل الدخول"
 
 
 }

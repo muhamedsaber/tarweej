@@ -7,8 +7,8 @@ import 'package:tarweej/features/Auth/auth_providers/data/repos/facebook_signin_
 import 'package:tarweej/features/Auth/auth_providers/data/repos/google_signin_repo.dart';
 import 'package:tarweej/features/Auth/auth_providers/data/services/firebase_auth_services_impl.dart';
 import 'package:tarweej/features/Auth/auth_providers/data/services/google_signin_service.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_cubit.dart';
 import 'package:tarweej/features/Auth/signup/data/repos/signup_repo.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
 
@@ -21,7 +21,7 @@ setupDependencyInjection() async {
   FacebookAuth facebookAuth = FacebookAuth.instance;
   GoogleSignInService googleSignInService =
       GoogleSignInService(googleSignIn: googleSignIn);
-      
+
   getIt.registerSingleton<FirebaseAuthServiceInterface>(
       FirebaseAuthServiceImpl());
 

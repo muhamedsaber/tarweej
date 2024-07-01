@@ -1,6 +1,6 @@
 
 {
-    "hello":"hello",
+    "hello":"Welcome",
     "email":"Email",
     "password":"Password",
     "pleaseEnterEmail":"Please enter email",
@@ -15,7 +15,12 @@
     "createAccount":"Create Account",
     "signupSuccess":"Signup Success",
     "errorOccured":"Error Occured",
-    "ok":"Ok"
+    "ok":"Ok",
+    "create":"Create ",
+    "yourAccount":"your Account",
+    "toContinue":"to continue",
+    "alreadyHaveAccount":"Already have an account?",
+    "login":"Login"
 
 }
 

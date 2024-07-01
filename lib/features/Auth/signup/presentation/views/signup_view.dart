@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej/core/di/dependency_injection.dart';
-import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
-import 'package:tarweej/core/utils/app_assets.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_providers.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
+import 'package:tarweej/features/Auth/signup/presentation/widgets/already_have_account.dart';
+import 'package:tarweej/features/Auth/signup/presentation/widgets/auth_section_divider.dart';
+import 'package:tarweej/features/Auth/signup/presentation/widgets/create_your_account_headline.dart';
 import 'package:tarweej/features/Auth/signup/presentation/widgets/signup_form.dart';
 
 class SignupView extends StatelessWidget {
@@ -30,18 +31,25 @@ class SignupView extends StatelessWidget {
           ),
         ],
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: ListView(
               children: [
-                verticalSpace(120),
+                verticalSpace(70),
+                const CreateYourAccountHeadline(),
+                verticalSpace(30),
                 BlocProvider(
                   create: (context) => getIt<SignupCubit>(),
                   child: const SignupForm(),
                 ),
                 verticalSpace(20),
-                const SigninProviders()
+                const AuthSectionDivider(),
+                verticalSpace(10),
+                const SigninProviders(),
+                verticalSpace(20),
+                const AlreadyHaveAccount(),
+                verticalSpace(20),
               ],
             ),
           ),

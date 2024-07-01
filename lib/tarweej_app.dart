@@ -21,24 +21,22 @@ class TarweejApp extends StatelessWidget {
             designSize: const Size(360, 690),
             builder: (context, child) {
               return MaterialApp(
-              locale: const Locale("en"),
-              initialRoute: Routes.signupView,
-              onGenerateRoute: AppRouter().onGenerateRoute,
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              theme: DarkThemeManager().darkTheme,
-              home: const TempHomeScreen(),
-            );
+                locale: const Locale("en"),
+                initialRoute: Routes.signupView,
+                onGenerateRoute: AppRouter().onGenerateRoute,
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                debugShowCheckedModeBanner: false,
+                theme: DarkThemeManager().darkTheme,
+              );
             },
             minTextAdapt: true,
             splitScreenMode: true,
-          
           );
         } else {
           return const NoInternetMaterialApp();

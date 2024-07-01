@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej/core/helpers/app_regex.dart';
 import 'package:tarweej/core/styles/text_style_helper.dart';
 import 'package:tarweej/features/Auth/signup/presentation/signup_cubit/signup_cubit.dart';
@@ -86,6 +87,7 @@ class _PasswordValidationGuidState extends State<PasswordValidationGuid> {
           /// by using .copyWith() method will be rediculous 😂
           /// So I decided to keep it here, Its bad practice but I'll chabnge it in The future
           style: TextStyle(
+            fontSize:10.sp,
             decoration:
                 isValid ? TextDecoration.lineThrough : TextDecoration.none,
             decorationStyle: TextDecorationStyle.solid,

@@ -6,8 +6,8 @@ import 'package:tarweej/core/Alerts/app_dialogs.dart';
 import 'package:tarweej/core/common/widgets/app_text_button.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_state.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_state.dart';
 
 class SigninWithFacebookBlocListener extends StatelessWidget {
   const SigninWithFacebookBlocListener({super.key});

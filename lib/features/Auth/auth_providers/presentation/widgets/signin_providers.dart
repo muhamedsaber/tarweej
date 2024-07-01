@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
 import 'package:tarweej/core/utils/app_assets.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/facebook_signin/facebook_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/facebook_signin/facebook_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_cubit.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_provider_button.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_with_facebook_bloc_listener.dart';
 import 'package:tarweej/features/Auth/auth_providers/presentation/widgets/signin_with_google_bloc_listener.dart';
@@ -27,10 +27,6 @@ class SigninProviders extends StatelessWidget {
           onTap: () {
             _signInWithFacebook(context);
           },
-        ),
-        horizontalSpace(10),
-        const SignInProviderButton(
-          imege: AppAssets.googleLogo,
         ),
 
         /// Listeners

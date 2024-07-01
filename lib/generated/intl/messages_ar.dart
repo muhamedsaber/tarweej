@@ -22,10 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
+        "create": MessageLookupByLibrary.simpleMessage("أنشـــــئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "errorOccured": MessageLookupByLibrary.simpleMessage("حدث خطأ"),
-        "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
+        "hello": MessageLookupByLibrary.simpleMessage("مرحباً بك"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "pleaseEnterEmail": MessageLookupByLibrary.simpleMessage(
@@ -38,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("من فضلك ادخل كلمة سر صحيحة"),
         "signupSuccess":
             MessageLookupByLibrary.simpleMessage("تم التسجيل بنجاح"),
+        "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),
         "validatePasswordLenght": MessageLookupByLibrary.simpleMessage(
             "كلمة السر يجب أن تكون 8 أحرف على الأقل"),
         "validatePasswordLowercase": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "كلمة السر يجب أن تحتوي على حرف خاص واحد على الأقل"),
         "validatePasswordUppercase": MessageLookupByLibrary.simpleMessage(
-            "كلمة السر يجب أن تحتوي على حرف كبير واحد على الأقل")
+            "كلمة السر يجب أن تحتوي على حرف كبير واحد على الأقل"),
+        "yourAccount": MessageLookupByLibrary.simpleMessage("حسابك")
       };
 }

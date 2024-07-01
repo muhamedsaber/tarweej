@@ -6,8 +6,8 @@ import 'package:tarweej/core/Alerts/app_dialogs.dart';
 import 'package:tarweej/core/common/widgets/app_text_button.dart';
 import 'package:tarweej/core/extensions/app_extensions.dart';
 import 'package:tarweej/core/helpers/spacing.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_cubit.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_state.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_cubit.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_state.dart';
 
 class SignInWithGoogleBlocListener extends StatelessWidget {
   const SignInWithGoogleBlocListener({super.key});
