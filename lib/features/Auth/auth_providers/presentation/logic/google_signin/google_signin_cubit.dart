@@ -6,7 +6,7 @@ import 'package:tarweej/config/cache/user_cache_helper.dart';
 import 'package:tarweej/core/networking/Firebase/Firebase_auth_errors.dart';
 import 'package:tarweej/core/networking/Firebase/firebase_result.dart';
 import 'package:tarweej/features/Auth/auth_providers/data/repos/google_signin_repo.dart';
-import 'package:tarweej/features/Auth/auth_providers/presentation/google_signin/google_signin_state.dart';
+import 'package:tarweej/features/Auth/auth_providers/presentation/logic/google_signin/google_signin_state.dart';
 import 'package:tarweej/features/Auth/profile/user_profile/data/models/user_model.dart';
 
 class GoogleSignInCubit extends Cubit<GoogleSignInState> {

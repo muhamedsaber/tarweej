@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tarweej/core/networking/Firebase/firebase_error_handler.dart';
 import 'package:tarweej/core/networking/Firebase/firebase_error_model.dart';
